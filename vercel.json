@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/reserva-back/index.js",
+      "use": "@vercel/node"
+    }
+  ]
+}
