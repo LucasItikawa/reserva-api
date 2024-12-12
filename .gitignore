@@ -8,8 +8,8 @@ node_modules/
 
 # Docker's database files
 tmp/db/
-*.env
-.env
+
+
 .env.copy
 
 # macOS files

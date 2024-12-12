@@ -1,16 +1,31 @@
 require("dotenv").config(); // Carregar variáveis de ambiente do .env
 const express = require("express"); // Importar o Express
+const cors = require("cors"); // Importar o CORS
 const db = require("./models"); // Importar os modelos e a configuração do Sequelize
 const routes = require("./routes"); // Importar as rotas
 
 // Criar a aplicação Express
 const app = express();
 
+// Configuração do middleware CORS
+app.use(
+  cors({
+    origin: "http://reserva-front-production.up.railway.app", // Substitua pelo domínio do seu frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // Se estiver usando cookies ou autenticação
+  })
+);
+
 // Middleware para parse de JSON no corpo das requisições
 app.use(express.json());
 
 // Usar as rotas
 app.use("/", routes);
+
+// Rota de teste para verificar CORS
+app.get("/api/test", (req, res) => {
+  res.json({ message: "CORS configurado com sucesso!" });
+});
 
 // Sincronizar os modelos com o banco de dados
 db.sequelize
