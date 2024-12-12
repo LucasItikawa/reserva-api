@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
+    dia: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
   });
 
   return Reserva;
