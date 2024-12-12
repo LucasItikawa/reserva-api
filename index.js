@@ -10,7 +10,7 @@ const app = express();
 // Configuração do middleware CORS
 app.use(
   cors({
-    origin: "http://reserva-front-production.up.railway.app", // Substitua pelo domínio do seu frontend
+    origin: "https://reserva-front-production.up.railway.app", // Substitua pelo domínio do seu frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // Se estiver usando cookies ou autenticação
   })
